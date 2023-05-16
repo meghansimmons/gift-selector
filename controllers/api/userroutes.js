@@ -20,6 +20,39 @@ router.post('/', async (req, res) => {
     }
 });
 
+//login
+
+router.post('/login', async (req, res)=> {
+    try {
+        const getUserData = await User.findOne({
+            where: { email: req.body.email } 
+        });
+
+        if(!getUserData) {
+            res.status(400).json({message: 'Email and password do not match, please try again.'});
+            return;
+        }
+
+        const checkedPassword = await getUserData.checkPassword(req.body.password);
+
+        if (!checkedPassword) {
+            res.status(400).json({ message: 'Email and password do not match, please try again.'});
+            return;
+        }
+
+        req.session.save(()=> {
+            req.session.user_id = getUserData.id;
+            req.session.logged_in = true;
+            res.json({ user: getUserData, message: 'Logged in!' });
+        });
+
+    } catch (err) {
+       return res.status(400).json(err);
+    }
+});
+
+
+
 
 
 
