@@ -31,10 +31,10 @@ Gift.init(
         type: DataTypes.STRING,
     },
     age_min: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
     },
     age_max: {  
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
     },
     relationship_type: {
         type: DataTypes.STRING,
