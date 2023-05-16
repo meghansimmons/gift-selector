@@ -8,7 +8,11 @@ const sequelize = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+<<<<<<< HEAD
 const hbs = exphbs.create({});
+=======
+//const hbs = exphbs.create({ helpers });
+>>>>>>> 582509652cd7cd2551bcc93bbc2743c2175280dc
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
