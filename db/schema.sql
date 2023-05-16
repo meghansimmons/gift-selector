@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS giftbox_db;
+CREATE DATABASE giftbox_db;
