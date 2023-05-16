@@ -1,0 +1,16 @@
+*{
+    font-family:'Courier New', Courier, monospace;
+}
+
+a{
+    text-decoration: none;
+    color: aqua;
+}
+
+body{
+    background-color: rgba(248, 248, 246, 0.911);
+}
+
+h2{
+    color: rgb(13, 13, 14);
+}
