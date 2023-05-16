@@ -1,11 +1,10 @@
 const sequelize = require('../config/connection');
-const gifts = require('./gifts');
-
+const gifts = require('./giftsData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedGifts();
+  await gifts.giftSeeds();
 
   process.exit(0);
 };
