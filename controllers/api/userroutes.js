@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
             password: req.body.password,
         });
         req.session.save(() => {
-            req.session.loggedIn = true;
+            req.session.logged_in = true;
             res.status(201).json(saveUser);
         });
     } catch (err) {
@@ -52,7 +52,16 @@ router.post('/login', async (req, res)=> {
 });
 
 
-
+router.post('/logout', (req,res) => {
+    if(req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    
+    } else {
+        res.status(404).end();
+    }
+});
 
 
 
