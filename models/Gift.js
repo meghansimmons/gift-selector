@@ -1,0 +1,56 @@
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+class Gift extends Model {}
+
+
+Gift.init(
+  {
+    id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+    },
+    item: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    },
+    price: {
+    type: DataTypes.DECIMAL,
+    allowNull: false,
+    },
+    productURL: {
+        type: DataTypes.STRING,
+    },
+    gift_category: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    gender: {
+        type: DataTypes.STRING,
+    },
+    age_min: {
+        type: DataTypes.NUMBER,
+    },
+    age_max: {  
+        type: DataTypes.NUMBER,
+    },
+    relationship_type: {
+        type: DataTypes.STRING,
+    },
+   
+  },
+
+
+    
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'event',
+  }
+);
+
+module.exports = Gift;
