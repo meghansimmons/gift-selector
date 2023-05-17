@@ -30,6 +30,9 @@ SavedGift.init(
     age: {
         type: DataTypes.STRING,
     },
+    productURL: {
+      type: DataTypes.STRING,
+    },
     event_id: {
         type: DataTypes.INTEGER,
     },

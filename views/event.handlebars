@@ -1,33 +1,49 @@
-  <div class="row mt-4">
-  <div class="col-md-6">
-  <div class="form">
-    <label for="exampleholiday">What holiday are you celebrating?</label>
-    <input type="holiday" class="form-control" id="exampleholiday1" aria-describedby="holidayHelp" placeholder="Enter the holiday">
-  </div>
-  </form>
-<form>
   <div class="row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="First name">
+  <div class="col-auto">
+    <h2> Welcome User!!!!</h2>
     </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Last name">
     </div>
-  </div>
-</form>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Relationship</label>
-  </div>
-  <select class="custom-select" id="inputGroupSelect01">
-    <option selected>Choose...</option>
-    <option value="1">Mother</option>
-    <option value="2">Father</option>
-    <option value="3">Son</option>
-    <option value="4">Daughter</option>
-    <option value="5">Wife</option>
-    <option value="6">Husband</option>
-    <option value="7">Friend</option>
-  </select>
-</div>
-<button type="button" class="btn btn-dark ">Next</button>
+    <div class="row mt-4">
+      <div class="col-md-6">  
+      <h3>Let's start to make your Gift-Box:</h3>
+
+      <div class ="form new-event-form">
+      <div class="form-group">
+        <div class ="row">
+        <label for="event-name">What holiday are you celebrating?</label>
+        <input type="text" class="form-input" id="holiday_name"  placeholder="Enter your event">
+      </div>
+
+      <div class="form-group">
+        <div class ="row">
+        <label for="event-username">Enter your Name:</label>
+        <input type="text" class="form-input" id="first_name" placeholder="First name">
+        </div>
+        
+      <div class="form-group">
+        <div class="row">
+        <input type="text" class="form-input" id="last_name" placeholder="Last name">
+        </div>
+      <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Relationship</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="1">Mother</option>
+        <option value="2">Father</option>
+        <option value="3">Son</option>
+        <option value="4">Daughter</option>
+        <option value="5">Wife</option>
+        <option value="6">Husband</option>
+        <option value="7">Friend</option>
+      </select>
+    </div>
+    <div class="form-group">
+    <div class="text-center">
+    <button type="button" id="form-button" class="btn btn-dark">Next Page</button>
+    </div>
+    </form>
+  </div>  
+
+<script src="./js/event.js"></script>
