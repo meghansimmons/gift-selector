@@ -1,14 +1,14 @@
 const User = require('./Users');
 const Event = require('./Event')
 const Gift = require('./Gift');
-const savedGift = require('./savedGift');
+const SavedGift = require('./savedGift');
 
-User.hasMany(savedGift, {
+User.hasMany(SavedGift, {
     foreignKey: 'user_id',
     onDelete: 'cascade'
 });
 
-savedGift.belongsTo(User, {
+SavedGift.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'cascade',
 });
@@ -22,20 +22,20 @@ Event.belongsToMany(Gift, {
     through: 'event_gift'
 });
 
-Gift.belongsToMany(savedGift, {
+Gift.belongsToMany(SavedGift, {
     through: 'saved_gift'
 })
 
-savedGift.belongsToMany(Gift, {
+SavedGift.belongsToMany(Gift, {
     through: 'saved_gift'
 })
 
-Event.belongsToMany(savedGift, {
+Event.belongsToMany(SavedGift, {
     through: 'event_saved'
 });
 
-savedGift.belongsToMany(Event, {
+SavedGift.belongsToMany(Event, {
     through: 'event_saved'
 });
 
-module.exports = { User, Event, Gift, savedGift };
+module.exports = { User, Event, Gift, SavedGift };
