@@ -1,3 +1,4 @@
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -51,5 +52,6 @@ SavedGift.init(
     modelName: 'savedgift',
   }
 );
+
 
 module.exports = SavedGift;
