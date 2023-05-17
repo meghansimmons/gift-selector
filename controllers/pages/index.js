@@ -8,7 +8,7 @@ router.use('/giftSelection', giftSelectionRoutes);
 
 
 router.get('/', (req, res) => {
-    res.render('homepage');
+    res.render('homepage'); 
 });
 
 router.get('/event',(req,res)=>{
