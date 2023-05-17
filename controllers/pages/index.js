@@ -11,5 +11,8 @@ router.get('/', (req, res) => {
     res.render('homepage');
 });
 
+router.get('/event',(req,res)=>{
+    res.render("event")
+})
 
 module.exports = router;
