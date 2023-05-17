@@ -1,28 +1,33 @@
-const { Event } = require('../models');
+const { User } = require('../models');
 
 const eventData = [
   {
-    date: '2/14/23',
-    holiday_name: "Valentine's Day",
+    username: 'dude',
+    email: "dude@gmail.com",
+    password: "123456JKLR"
   },
   {
-    date: '03/2/2023',
-    holiday_name: "Birthday",
+    username: 'tattoo',
+    email: "tattoo@gmail.com",
+    password: "root1234!&"
   },
   {
-    date: '8/31/2023',
-    holiday_name: "Anniversary",
+    username: 'lady',
+    email: "lady@gmail.com",
+    password: "12345!@#$%"
   },
   {
-    date: '05/14/23',
-    holiday_name: "Mother's Day",
+    username: 'cat',
+    email: "cat@gmail.com",
+    password: "12345!@#$%"
   },
   {
-    date: '06/18/23',
-    holiday_name: "Father's Day",
+    username: 'dog',
+    email: "dog@gmail.com",
+    password: "12345!@#$%"
   },
 ];
 
-const seedEvents = () => Event.bulkCreate(eventData);
+const seedUser = () => User.bulkCreate(eventData);
 
-module.exports = seedEvents;
+module.exports = seedUser;

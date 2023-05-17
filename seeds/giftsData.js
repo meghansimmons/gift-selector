@@ -67,7 +67,7 @@ const giftSeeds = async () => {
 
     await Gift.bulkCreate(giftsData);
 
-    console.log('Gift are here yayyy!!!!.');
+    
   } catch (error) {
     console.error('Error seeding gifts:', error);
   }
