@@ -1,5 +1,9 @@
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+// added require express and the router hope i did it right 
+const express = require('express');
+const router = express.Router();
 
 class SavedGift extends Model {}
 
@@ -52,4 +56,5 @@ SavedGift.init(
   }
 );
 
-module.exports = SavedGift;
+
+module.exports = { SavedGift, router };
