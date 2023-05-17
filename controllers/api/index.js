@@ -9,4 +9,7 @@ router.use('/gifts', giftRoutes);
 const eventRoutes = require('./eventroutes');
 router.use('/event', eventRoutes);
 
+const savedGiftRoutes = require('./savedgift');
+router.use('/savedgift', savedGiftRoutes);
+
 module.exports = router;

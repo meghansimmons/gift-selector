@@ -3,7 +3,8 @@ const router = express.Router();
 const { SavedGift } = require('../../models');
 //added dependencies for the new file to correspond wiht the savedgifts.js in the models folder hope im doing this right 
 
-router.get('/api/savedgifts', async (req, res) => {
+router.get('/', async (req, res) => {
+
     try {
       const savedGift = await SavedGift.findAll();
   
