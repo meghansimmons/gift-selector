@@ -1,5 +1,16 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const nodemailer = require("nodemailer");
+
+let transporter = nodemailer.createTransport({
+  host: 'smtp.ethereal.email',
+  port: 587,
+  auth: {
+        user: process.env.MAIL_USERNAME,
+        pass: process.env.MAIL_PW
+    },
+});
+
 
 
 //new user
@@ -11,12 +22,25 @@ router.post('/', async (req, res) => {
             password: req.body.password,
         });
         req.session.save(() => {
+            req.session.user_id= req.body.username;
             req.session.logged_in = true;
             
         });
+        let testAccount = await nodemailer.createTestAccount();
+
+        await transporter.sendMail({
+            from: process.env.MAIL_USERNAME,
+            to: `${req.body.email}`,
+            subject: "Thanks for signing up!",
+            text: `Welcome ${req.body.username}! We look forward to helping you find the PERFECT gift for your occasion.
+            
+            --Team9Designs`
+            
+            });
 
         res.render('homepage',  {
-        logged_in: req.session.logged_in
+        user_id: req.session.user_id,
+        logged_in: req.session.logged_in,
     });
     } catch (err) {
         console.log(err);
@@ -47,11 +71,13 @@ router.post('/login', async (req, res)=> {
         }
 
         req.session.save(()=> {
-            req.session.user_id = getUserData.id;
+            
+            
             req.session.logged_in = true;
             
         });
         res.render('homepage',  {
+            
             logged_in: req.session.logged_in
         });
     } catch (err) {
