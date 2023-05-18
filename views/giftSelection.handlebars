@@ -1,8 +1,6 @@
 
 <h2>Gift Suggestions:</h2>
 
-
-
 <div class="container">
 	<div class="row">
         {{#each actualGiftData as |data|}}
@@ -15,22 +13,15 @@
 						<p class="card-text">
 							Price: ${{price}}
 						</p>
-                    <div class="card-footer bg-white">
+                    </div>
+                    <div id="footerBtns" class="card-footer bg-white">
 						<a href="{{productURL}}" target="_blank" class="btn btn-primary btn-sm">
 							Buy
 						</a>
 
-						{{!-- <a href="#" class="btn btn-primary btn-sm">
+						<a onclick='saveWishList("{{id}}", "{{productURL}}")' class="btn btn-primary btn-sm">
                             Add to Wish List
-					    </a> --}}
-
-                    <div id="wish-btn">
-                        <button type="button" id="save-Btn" class="btn btn-primary btn-sm">Add to Wish List</button>
-                    </div>
-
-                        {{!-- <button onClick="alert('Button was ')" type="button" id="wish-Btn" class="btn btn-primary btn-sm">Add to Wish List</button> --}}
-                    
-                    </div>
+					    </a>
 					</div>
 				</div>
 			</div>

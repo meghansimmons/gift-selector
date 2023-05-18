@@ -1,28 +1,28 @@
 console.log("the page is loading!!");
 
-const wishBtnEl = document.getElementById('wish-btn');
-// console.log(wishBtnEl);
+  
+const saveWishList = async (id, url) =>{
+    console.log(id,url);
 
-const saveWishList = async (event) =>{
-    event.preventDefault();
-   
-    const firstName = 'Cate';
+    const giftId = id;
+    const firstName = 'Eileen';
     console.log(firstName);
     const lastName = 'Simms';
     console.log(lastName);
     const holidayName = "Valentine's Day";
     console.log(holidayName);
+    const productURL = url;
 
     const postSavedGift = await fetch('/api/savedgift', {
         method: "POST",
         body: JSON.stringify ({
             first_name: firstName,
-            last_name: lastName
+            last_name: lastName,
             // relationship: relationship,
             // gender: gender,
-            // productURL: productURL,
+            productURL: productURL,
             // event_id:eventId,
-            // gift_id: giftId
+            gift_id: giftId
         }),
         headers: { 'Content-Type': 'application/json' },
     })
@@ -35,5 +35,3 @@ const saveWishList = async (event) =>{
         alert("Something went wrong!")
     }
 }
-
-wishBtnEl.addEventListener('click', saveWishList);
