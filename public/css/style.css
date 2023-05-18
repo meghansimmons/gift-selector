@@ -2,9 +2,9 @@
     font-family:'Courier New', Courier, monospace;
 }
 
-a{
+a {
     text-decoration: none;
-    color: aqua;
+    color: black;
 }
 
 body{
@@ -14,3 +14,13 @@ body{
 h2,h3{
     color: rgb(13, 13, 14);
 }
+
+img {
+    max-height: 300px;
+    min-height: 300px;
+    width: auto;
+}
+.form-group{
+    font-weight: bolder;
+}
+
