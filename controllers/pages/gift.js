@@ -1,14 +1,13 @@
 const router = require('express').Router();
-// included the specific routes to index
-//localhost:3001/dashboard
+const { savedGift } = require("../../models");
 
-router.get('/', (req, res) => {
-    res.render('homepage');
-});
+router.get('/', async (req, res) => {
+    const savedgiftData = await savedGift.findAll({});
 
-router.get('/dashboard', (req, res) =>{
-    res.render('gift');
+    //because this is an array....need .mpa
+    const actualsavedgiftData = savedgiftData.map((savedgift) => savedgift.get({ plain: true }));
+   
+    res.render('gift', {actualsavedgiftData});
+  });
 
-});
-
-module.exports = router;
+  module.exports = router;

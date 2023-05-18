@@ -1,9 +1,5 @@
-<section class="container row">
-  <div class="col-3">
-    <p class="text-center">
-      <strong style="font-size: 20px;">Welcome to your wishlist! I hope it is something nice!!</strong>
-    </p>
-  </div>
+{{!-- <section class="container row">
+  <
 
   // not sure where to pull from to get item to show which handle bar to pull from 
   <div>
@@ -35,6 +31,27 @@
     <li class="col-3"></li>
 
   </ul>
-</section>
+</section> --}}
 
-<script src="/pages/gift.js"></script>
+{{!-- // <script src="/js/gift.js"></script> --}}
+
+<h1>
+  Welcome to your wishlist! I hope you found what you are looking for 
+</h1>
+{{#each actualsavedgiftData as |data|}}
+<p>firstname:{{first_name}} </p>
+{{/each}}
+<h2>
+  <div class="col-3">
+    <button type="button" class="proceed-button" onclick="redirectToCheckout()"> Proceed to Checkout</button>
+  </div>
+
+  <script>
+    function redirectToCheckout() { //change function name whwn get right words for it 
+      window.location.href = // not sure which handle bar to link to proceed to that page   '/checkout';
+    }
+  </script>
+</h2>
+<h3>
+  
+</h3>
