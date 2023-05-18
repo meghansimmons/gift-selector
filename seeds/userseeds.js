@@ -28,6 +28,8 @@ const eventData = [
   },
 ];
 
-const seedUser = () => User.bulkCreate(eventData);
+const seedUser = () => User.bulkCreate(eventData, {
+    individualHooks: true
+});
 
 module.exports = seedUser;
