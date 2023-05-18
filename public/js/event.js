@@ -8,14 +8,14 @@ const eventFormHandler = async (event) => {
     if (firstName && lastName) {
         const response = await fetch('/api/event', {
           method: 'POST',
-          body: JSON.stringify({holiday_name, firstName, lastName}),
+          body: JSON.stringify({firstName, lastName}),
           headers: { 
             'Content-Type': 'application/json' },
         });
     
         if (response.ok) {
             // console.log('lastName');
-            document.location.replace('/event');
+            document.location.replace('/giftSelection');
           } else {
             alert('Failed to create event');
           }
