@@ -11,8 +11,17 @@
       <div class="form-group">
         <div class ="row">
         <label for="event-name">What holiday are you celebrating?</label>
-        <input type="text" class="form-input" id="holiday_name"  placeholder="Enter your event">
-      </div>
+        {{!-- <input type="text" class="form-input" id="holiday_name"  placeholder="Enter your event">
+      </div> --}}
+      <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      holidays
+      </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">{{holiday_name}}</a>
+    {{!-- <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div> --}}
 
       <div class="form-group">
         <div class ="row">
