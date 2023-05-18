@@ -1,16 +1,32 @@
 
-<h2>Gift Suggestion:</h2>
-<div>
-    <p>{{item}}</p>
-    <p>Price: ${{price}}</p>
-   
-    <a href="{{productURL}}" target="_blank"><img src="{{productImage}}" alt="{{item}}" style="width:450px;height:450px;"></a>
-    
-    <button onclick="window.open('{{productURL}}', '_blank')" type="button" id="buy-Btn"class="btn btn-primary">Buy</button>
+<h2>Gift Suggestions:</h2>
 
-</div>
-<div id="wish-btn">
-        <button type="button" id="save-Btn" class="btn btn-primary">Add to Wish List</button>
+<div class="container">
+	<div class="row">
+        {{#each actualGiftData as |data|}}
+			<div class="col-lg-4 mb-4">
+				<div class="card h-100">
+					<a href="{{productURL}}" target="_blank"><img class="card-img-top" src="{{productImage}}" alt="{{item}}" style="object-fit: contain"</a>
+
+					<div class="card-body" >
+						<h5 class="card-title">{{item}}</h5>
+						<p class="card-text">
+							Price: ${{price}}
+						</p>
+                    </div>
+                    <div id="footerBtns" class="card-footer bg-white">
+						<a href="{{productURL}}" target="_blank" class="btn btn-primary btn-sm">
+							Buy
+						</a>
+
+						<a onclick='saveWishList("{{id}}", "{{productURL}}")' class="btn btn-primary btn-sm">
+                            Add to Wish List
+					    </a>
+					</div>
+				</div>
+			</div>
+        {{/each}}
+    </div>
 </div>
 
 
