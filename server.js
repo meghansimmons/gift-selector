@@ -41,3 +41,8 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+app.get('/gift', (req, res) => {
+  const item = req.query.item;
+  res.render('gift', { item });
+});

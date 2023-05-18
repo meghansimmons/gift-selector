@@ -13,5 +13,8 @@ router.get('/', (req, res) => {
     res.render('homepage');
 });
 
+router.get('/savedgift', (req, res) =>{
+    res.render('gift');
+})
 
 module.exports = router;
