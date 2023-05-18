@@ -1,11 +1,11 @@
 const eventFormHandler = async (event) => {
     event.preventDefault();
   
-    const holiday_name = document.querySelector('#holiday_name').value.trim();
+    // const holiday_name = document.querySelector('#holiday_name').value.trim();
     const firstName = document.querySelector('#first_name').value.trim();
     const lastName = document.querySelector('#last_name').value.trim();
 
-    if (holiday_name && firstName && lastName) {
+    if (firstName && lastName) {
         const response = await fetch('/api/event', {
           method: 'POST',
           body: JSON.stringify({holiday_name, firstName, lastName}),
@@ -14,7 +14,7 @@ const eventFormHandler = async (event) => {
         });
     
         if (response.ok) {
-            console.log('lastName');
+            // console.log('lastName');
             document.location.replace('/event');
           } else {
             alert('Failed to create event');
