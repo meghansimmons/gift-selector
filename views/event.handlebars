@@ -44,12 +44,14 @@
       {{/each}}
     </select>
     </div>
+    {{#if value}}
     <div class="form-group">
     <div class="text-center">
-    <button type="button" onClick= "http://localhost:3001/giftSelection" id="form-button" class="btn btn-dark">Next Page</button>
+    <button type="button" onClick= "location.href='http://localhost:3001/giftSelection';" id="form-button" class="btn btn-dark">Next Page</button>
     </div>
+    {{else}}
+    
     </form>
   </div>  
  
-
 <script src="./js/event.js"></script>
