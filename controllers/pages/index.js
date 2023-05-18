@@ -3,7 +3,7 @@ const router = require('express').Router();
 const loginRoutes = require('./login');
 router.use('/login', loginRoutes);
 
-const giftSelectionRoutes = require('./giftselection');
+const giftSelectionRoutes = require('./giftSelection');
 router.use('/giftSelection', giftSelectionRoutes);
 
 const eventRoutes= require('./event')

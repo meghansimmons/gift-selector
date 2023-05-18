@@ -3,8 +3,9 @@ const { User } = require('../../models');
 const nodemailer = require("nodemailer");
 
 let transporter = nodemailer.createTransport({
-  host: 'smtp.ethereal.email',
-  port: 587,
+    host: "smtp.ethereal.email",
+    port: 587,
+    secure: false,
   auth: {
         user: process.env.MAIL_USERNAME,
         pass: process.env.MAIL_PW
@@ -26,9 +27,8 @@ router.post('/', async (req, res) => {
             req.session.logged_in = true;
             
         });
-        let testAccount = await nodemailer.createTestAccount();
-
-        await transporter.sendMail({
+        
+        transporter.sendMail({
             from: process.env.MAIL_USERNAME,
             to: `${req.body.email}`,
             subject: "Thanks for signing up!",
@@ -36,7 +36,13 @@ router.post('/', async (req, res) => {
             
             --Team9Designs`
             
+            }, function(error, info) {
+                if(error) {
+                    return console.log(error);
+                }
+                console.log('Message sent: ' + info.response)
             });
+            
 
         res.render('homepage',  {
         user_id: req.session.user_id,
