@@ -23,6 +23,9 @@ Gift.init(
     productURL: {
         type: DataTypes.STRING,
     },
+    productImage: {
+        type: DataTypes.STRING,
+    },
     gift_category: {
         type: DataTypes.STRING,
         allowNull: false,
