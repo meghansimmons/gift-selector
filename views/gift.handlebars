@@ -1,39 +1,4 @@
-{{!-- <section class="container row">
-  <
 
-  // not sure where to pull from to get item to show which handle bar to pull from 
-  <div>
-    <h2>My Wishlist</h2>
-    {{#if item}}
-      <p>You added {{item}} to your wishlist!</p>
-    {{#if selectedItem}}
-      <p>You selected {{selectedItem}}!</p>
-    {{else}}
-      <p>No item selected.</p>
-    {{/if}}
-  </div>
-
-  
-  <div class="col-3">
-    <button type="button" class="proceed-button" onclick="redirectToCheckout()">// find right name Proceed to Checkout</button>
-  </div>
-
-  <script>
-    function redirectToCheckout() { //change function name whwn get right words for it 
-      window.location.href = // not sure which handle bar to link to proceed to that page   '/checkout';
-    }
-  </script>
-
-
-<section class="container row">
-  <ul>
-    <li class="col-3"></li>
-    <li class="col-3"></li>
-
-  </ul>
-</section> --}}
-
-{{!-- // <script src="/js/gift.js"></script> --}}
 
 <h1>
   Welcome to your wishlist! I hope you found what you are looking for 
@@ -41,7 +6,18 @@
 {{#each actualsavedgiftData as |data|}}
 <p>firstname:{{first_name}} </p>
 {{/each}}
+
 <h2>
+is this what you are looking for?
+</h2>
+
+<ul>
+  <li></li>
+  <li></li>
+  {{!-- <li></li>     i want my selected gifts to show up here  --}}
+</ul>
+
+<h3>
   <div class="col-3">
     <button type="button" class="proceed-button" onclick="redirectToCheckout()"> Proceed to Checkout</button>
   </div>
@@ -51,7 +27,5 @@
       window.location.href = // not sure which handle bar to link to proceed to that page   '/checkout';
     }
   </script>
-</h2>
-<h3>
-  
 </h3>
+<script src="../controllers/pages/gift.js"></script>
