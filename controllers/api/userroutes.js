@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
             });
             
 
-        res.render('homepage',  {
+        res.render('gift',  {
         user_id: req.session.user_id,
         logged_in: req.session.logged_in,
     });
@@ -82,8 +82,7 @@ router.post('/login', async (req, res)=> {
             req.session.logged_in = true;
             
         });
-        res.render('homepage',  {
-            
+        res.render('gift',  {
             logged_in: req.session.logged_in
         });
     } catch (err) {
