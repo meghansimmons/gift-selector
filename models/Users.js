@@ -34,8 +34,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [10],
-        is: ["^[a-zA-Z0-9\W\S]*$", 'i'],
+        len: [8]
       },
     },
   },
