@@ -83,6 +83,7 @@ router.post('/login', async (req, res)=> {
             
         });
         res.render('gift',  {
+
             logged_in: req.session.logged_in
         });
     } catch (err) {

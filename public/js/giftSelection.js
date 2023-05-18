@@ -1,3 +1,5 @@
+// const withAuth = require('../../util/auth')
+
 console.log("the page is loading!!");
 
   

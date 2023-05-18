@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
 
     //because this is an array....need .mpa
     const actualsavedgiftData = savedgiftData.map((savedgift) => savedgift.get({ plain: true }));
-   
+
     res.render('gift', {actualsavedgiftData});
   });
 

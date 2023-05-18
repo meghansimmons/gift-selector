@@ -1,31 +1,33 @@
 
-
 <h1>
-  Welcome to your wishlist! I hope you found what you are looking for 
+  Welcome to your wishlist! I hope you found what you are looking for
 </h1>
-{{#each actualsavedgiftData as |data|}}
-<p>firstname:{{first_name}} </p>
-{{/each}}
+<ul>
+  {{#each gifts as |gift|}}
+    <li>
+  {{gift.item}}
 
+    </li>
+    <li>
+      {{gift.price}}
+    </li>
+    
+  {{/each}}
+</ul>
 <h2>
 is this what you are looking for?
 </h2>
-
-<ul>
-  <li></li>
-  <li></li>
-  {{!-- <li></li>     i want my selected gifts to show up here  --}}
-</ul>
-
 <h3>
-  <div class="col-3">
-    <button type="button" class="proceed-button" onclick="redirectToCheckout()"> Proceed to Checkout</button>
-  </div>
+<div class="col-3">
+  <button type="button" class="proceed-button" onclick="redirectToCheckout()">add a new gift?</button>
 
   <script>
-    function redirectToCheckout() { //change function name whwn get right words for it 
-      window.location.href = // not sure which handle bar to link to proceed to that page   '/checkout';
+    function redirectToCheckout() {
+      window.location.href = "http://localhost:3001/event";
     }
   </script>
+</div>
 </h3>
+
 <script src="../controllers/pages/gift.js"></script>
+
