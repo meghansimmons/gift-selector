@@ -16,4 +16,23 @@ router.get('/', async (req, res) => {
   });
   //i defined the get route via the saved data hope i did this right as well 
 
+  //post savedgift
+router.post('/', async (req, res) => {
+  try {
+    const { first_name:firstName, last_name:lastName, relationship:relationship, gender: gender, productURL: productURL, event_id:eventId, gift_id: giftId } = req.body;
+    const savedGiftData = await SavedGift.create({
+      first_name: firstName,
+      last_name: lastName,
+      relationship: relationship,
+      gender: gender,
+      productURL: productURL,
+      event_id:eventId,
+      gift_id: giftId,
+    });
+    res.status(200).json(savedGiftData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
   module.exports = router;

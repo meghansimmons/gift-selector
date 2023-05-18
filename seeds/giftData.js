@@ -61,7 +61,7 @@ const giftSeeds = async () => {
       {
         item: 'Watch',
         productURL: 'https://www.samsung.com/us/watches/galaxy-watch5',
-        productImage: 'https://image-us.samsung.com/us/watches/galaxy-watch5/images/galaxy-watch5-kv.jpg',
+        productImage: 'https://image-us.samsung.com/SamsungUS/configurator/SDSAC-4719-W5_Golf-KV-Gallery-720x540.png',
         price: 175.00,
         gift_category: 'jewelry',
         gender: 'Male',
