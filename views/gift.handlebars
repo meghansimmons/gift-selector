@@ -10,13 +10,20 @@
     <li>
       {{gift.price}}
     </li>
+    
   {{/each}}
 </ul>
 <h2>
 is this what you are looking for?
 </h2>
 <h3>
-  <div class=“col-3”>
-    <button type=“button” class=“proceed-button” onclick={{redirectToCheckout}}> Proceed to Checkout</button>
-  </div>
+<div class="col-3">
+  <button type="button" class="proceed-button" onclick="redirectToCheckout()">Proceed to Checkout</button>
+
+  <script>
+    function redirectToCheckout() {
+      window.location.href = "http://localhost:3001/event";
+    }
+  </script>
+</div>
 </h3>
