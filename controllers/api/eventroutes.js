@@ -17,6 +17,7 @@ const { Event } = require('../../models');
   router.get('/', async (req, res) => {
   const eventData = await Event.findAll({
     attributes: [
+      
       'holiday_name'
     ]
   });
