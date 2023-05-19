@@ -1,22 +1,49 @@
 
 <h1>
-  Welcome to your wishlist! I hope you found what you are looking for
+  saved gifts! I hope you found what you are looking for!
 </h1>
 <ul>
-  {{#each gifts as |gift|}}
-    <li>
-  {{gift.item}}
-
-    </li>
-    <li>
-      {{gift.price}}
-    </li>
-    
-  {{/each}}
-</ul>
+<div class="item-container">
+  <h1>Item <span class="badge bg-secondary">Rose Bouquet</span></h1>
+  <h2>Price <span class="badge bg-secondary">40.00$</span></h2>
+  <button class="delete-button" onclick="deleteItem(this)">Delete</button>
+</div> 
+<div class="item-container">
+ <h1>Item <span class="badge bg-secondary">Diamond Necklace</span></h1>
+<h2>price <span class="badge bg-secondary">350.00$</span></h2>
+ <button class="delete-button" onclick="deleteItem(this)">Delete</button>
+</div>
+<div class="item-container">
+ <h1>Item <span class="badge bg-secondary">Birthday Card</span></h1>
+<h2>price <span class="badge bg-secondary">2.99$</span></h2>
+<button class="delete-button" onclick="deleteItem(this)">Delete</button>
+</div>
+<div class="item-container">
+ <h1>Item <span class="badge bg-secondary">Gift Card</span></h1>
+<h2>price <span class="badge bg-secondary">50.00$</span></h2>
+<button class="delete-button" onclick="deleteItem(this)">Delete</button>
+</div>
+<div class="item-container">
+ <h1>Item <span class="badge bg-secondary">Watch</span></h1>
+<h2>price <span class="badge bg-secondary">40.00$</span></h2>
+<button class="delete-button" onclick="deleteItem(this)">Delete</button>
+</div>
+<div class="item-container">
+ <h1>Item <span class="badge bg-secondary">Rose Bouquet</span></h1>
+<h2>price <span class="badge bg-secondary">175.00$</span></h2>
+<button class="delete-button" onclick="deleteItem(this)">Delete</button>
+</div>
 <h2>
 is this what you are looking for?
 </h2>
+
+<script>
+  function deleteItem(button) {
+    var itemContainer = button.parentElement;
+    itemContainer.remove();
+  }
+</script>
+
 <h3>
 <div class="col-3">
   <button type="button" class="proceed-button" onclick="redirectToCheckout()">add a new gift?</button>
