@@ -31,7 +31,7 @@ const saveWishList = async (id, url) =>{
 
 
     if (postSavedGift.ok) {
-        document.location.replace('/');
+        document.location.replace('/savedgift');
         alert("Your gift has been saved!");
     }else{
         alert("Something went wrong!")
